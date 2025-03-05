@@ -61,7 +61,7 @@ public class Test extends JFrame {
         pnCenter.add(pnKQ);
 
         JPanel pnOutput = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        txtKQ = new JTextField(15);
+        txtKQ = new JTextField(15); //Text field thanh kết quả quá nhỏ
         txtKQ.setEnabled(false);
         txtKQ.setHorizontalAlignment(SwingConstants.CENTER);
         pnOutput.add(txtKQ);
@@ -107,14 +107,14 @@ public class Test extends JFrame {
                     double b = Double.parseDouble(txtB.getText());
                     double c = Double.parseDouble(txtC.getText());
 
-
+                    //Thêm điều kiện a phải > 0
                     double delta = b * b - 4 * a * c;
                     if (delta > 0) {
                         double x1 = (-b + Math.sqrt(delta)) / (2 * a);
                         double x2 = (-b - Math.sqrt(delta)) / (2 * a);
                         txtKQ.setText("x1 = " + x1 + " và x2 = " + x2);
                     } else if (delta == 0) {
-                        double x = -b / (2 * a);
+                        double x = -b / (2 * a); //Công thức sai
                         txtKQ.setText("x1 = x2 = " + x);
                     } else {
                         txtKQ.setText("Phương trình vô nghiệm");
@@ -133,7 +133,7 @@ public class Test extends JFrame {
 
     public static void main(String[] args) {
         Test mt = new Test();
-        mt.setSize(200, 200);
+        mt.setSize(200, 200); //setSize quá nhỏ
         mt.setLocationRelativeTo(null);
         mt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mt.setVisible(true);
